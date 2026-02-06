@@ -1,92 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Simple To-Do List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .todo-container {
-      background: #fff;
-      padding: 20px;
-      width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    input {
-      width: 75%;
-      padding: 8px;
-    }
-
-    button {
-      padding: 8px 10px;
-      cursor: pointer;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 15px;
-    }
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    li button {
-      background: red;
-      color: white;
-      border: none;
-      border-radius: 4px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Shoe Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .products {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product button {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .product button:hover {
+            background-color: #444;
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="todo-container">
-    <h2>To-Do List</h2>
-    <input type="text" id="taskInput" placeholder="Add a task">
-    <button onclick="addTask()">Add</button>
+<header>
+    <h1>StepUp Shoes</h1>
+    <p>Comfort • Style • Performance</p>
+</header>
 
-    <ul id="taskList"></ul>
-  </div>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
 
-  <script>
-    function addTask() {
-      const input = document.getElementById("taskInput");
-      const taskText = input.value.trim();
+<div class="container">
+    <h2 style="text-align:center;">Our Collection</h2>
 
-      if (taskText === "") return;
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Running Shoes">
+            <h3>Running Shoes</h3>
+            <p>$79.99</p>
+            <button>Buy Now</button>
+        </div>
 
-      const li = document.createElement("li");
-      li.innerHTML = `
-        ${taskText}
-        <button onclick="removeTask(this)">X</button>
-      `;
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Casual Shoes">
+            <h3>Casual Shoes</h3>
+            <p>$59.99</p>
+            <button>Buy Now</button>
+        </div>
 
-      document.getElementById("taskList").appendChild(li);
-      input.value = "";
-    }
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Sneakers">
+            <h3>Sneakers</h3>
+            <p>$69.99</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</div>
 
-    function removeTask(button) {
-      button.parentElement.remove();
-    }
-  </script>
+<footer>
+    <p>&copy; 2026 StepUp Shoes. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
